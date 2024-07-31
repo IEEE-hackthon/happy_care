@@ -1,10 +1,91 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:save_environment/widgets/login_signup_widget/fullname_text_field.dart';
+import 'package:save_environment/widgets/login_signup_widget/login_button.dart';
+import 'package:save_environment/widgets/login_signup_widget/or_divider.dart';
+import 'package:save_environment/widgets/login_signup_widget/password_text_field.dart';
+import 'package:save_environment/widgets/login_signup_widget/remember_forget.dart';
+import 'package:save_environment/widgets/login_signup_widget/signup.dart';
+import 'package:save_environment/widgets/login_signup_widget/social_button.dart';
+import 'package:save_environment/widgets/login_signup_widget/welcome_text.dart';
 
 class LogInPage extends StatelessWidget {
   const LogInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          double screenWidth = constraints.maxWidth;
+          double screenHeight = constraints.maxHeight;
+          double horizontalPadding = screenWidth * 0.05;
+          double verticalPadding = screenHeight * 0.05;
+
+          return Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: verticalPadding),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                WelcomeText(
+                  fontSize: screenWidth * 0.07,
+                  color: Color(0xff99BA60),
+                  label: 'Welcome back !',
+                ),
+                SizedBox(
+                  height: screenHeight * 0.03,
+                ),
+                FullNameTextField(),
+                SizedBox(
+                  height: screenHeight * 0.02,
+                ),
+                PasswordTextField(
+                  label: 'Password',
+                ),
+                SizedBox(
+                  height: screenHeight * 0.015,
+                ),
+                RememberMeAndForgotPassword(
+                  iconSpacing: screenWidth * 0.01,
+                  fontSize: screenWidth * 0.04,
+                ),
+                SizedBox(
+                  height: screenHeight * 0.035,
+                ),
+                LoginButton(
+                  height: screenHeight * 0.07,
+                  fontSize: screenWidth * 0.05,
+                  backgroundColor: Color(0xff99BA60),
+                  textColor: Colors.white,
+                ),
+                SizedBox(
+                  height: screenHeight * 0.025,
+                ),
+                OrContinueWithDivider(
+                  fontSize: screenWidth * 0.04,
+                ),
+                SizedBox(
+                  height: screenHeight * 0.024,
+                ),
+                SocialButtons(
+                  iconSize: screenHeight * 0.03,
+                  spacing: screenWidth * 0.06,
+                ),
+                SizedBox(
+                  height: screenHeight * 0.029,
+                ),
+                SignUpText(
+                  fontSize: screenWidth * 0.045,
+                  linkColor: Color(0xff99BA60),
+                  textColor: Color(0xff717171),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
   }
 }
