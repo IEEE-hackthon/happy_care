@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:save_environment/views/login_page.dart';
+
+import 'views/onboarding_page.dart';
 
 void main() {
-  runApp(const SaveEnvironment());
+  runApp(const SaveEnvironmentApp());
 }
 
-class SaveEnvironment extends StatelessWidget {
-  const SaveEnvironment({super.key});
+class SaveEnvironmentApp extends StatelessWidget {
+  const SaveEnvironmentApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LogInPage(),
+      home: OnboardingScreen(),
     );
   }
 }
