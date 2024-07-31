@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:save_environment/views/login_signup_pages/confirmed_page.dart';
 import 'package:save_environment/views/login_signup_pages/login_page.dart';
 import 'package:save_environment/widgets/login_signup_widget/agree_terms.dart';
 import 'package:save_environment/widgets/login_signup_widget/email_text_field.dart';
@@ -66,7 +67,13 @@ class SignUpPage extends StatelessWidget {
                   height: screenHeight * 0.035,
                 ),
                 LoginAndSignUpButton(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ConfirmedPage(),
+                      ),
+                    );
+                  },
                   label: 'Sign Up',
                   height: screenHeight * 0.05,
                   fontSize: screenWidth * 0.05,
