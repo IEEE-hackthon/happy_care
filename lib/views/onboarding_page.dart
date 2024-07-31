@@ -18,21 +18,21 @@ class OnboardingScreenState extends State<OnboardingScreen> {
 
   final pages = [
     OnboardingPage(
-      image: 'assets/onboarding/splash1.png',
+      image: 'assets/onboarding_images/splash1.png',
       title: 'Explore',
       description:
           'Discover the fascinating world of plants and animals around you.',
       buttonColor: Colors.orange,
     ),
     OnboardingPage(
-      image: 'assets/onboarding/splash2.png',
+      image: 'assets/onboarding_images/splash2.png',
       title: 'Care',
       description:
           'Learn the best practices to nurture and protect your green and furry friends.',
       buttonColor: Colors.green,
     ),
     OnboardingPage(
-      image: 'assets/onboarding/splash3.png',
+      image: 'assets/onboarding_images/splash3.png',
       title: 'Thrive',
       description:
           'Watch your plants and pets flourish with the care you provide.',
