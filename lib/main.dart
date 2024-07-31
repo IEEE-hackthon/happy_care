@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'views/onboarding_page.dart';
+import 'views/onboarding_page/onboarding_page.dart';
 
 void main() {
   runApp(const SaveEnvironmentApp());

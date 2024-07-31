@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../models/onboarding_page_model.dart';
-import '../widgets/onboarding/onboarding_button_widget.dart';
-import '../widgets/onboarding/onboarding_indicator_widget.dart';
-import '../widgets/onboarding/onboarding_widget.dart';
-import 'login_page.dart';
+import '../../models/onboarding_page_model.dart';
+import '../../widgets/onboarding/onboarding_button_widget.dart';
+import '../../widgets/onboarding/onboarding_indicator_widget.dart';
+import '../../widgets/onboarding/onboarding_widget.dart';
+import '../login_signup_pages/login_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});

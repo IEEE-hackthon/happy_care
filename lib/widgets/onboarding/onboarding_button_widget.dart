@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/onboarding_page_model.dart';
-import '../../views/login_page.dart';
+import '../../views/login_signup_pages/login_page.dart';
 
 class OnboardingButtonWidget extends StatelessWidget {
   final PageController pageController;

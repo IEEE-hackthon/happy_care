@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:save_environment/views/sign_up_page.dart';
+import 'package:save_environment/views/login_signup_pages/sign_up_page.dart';
 import 'package:save_environment/widgets/login_signup_widget/fullname_text_field.dart';
 import 'package:save_environment/widgets/login_signup_widget/login_signup_button.dart';
 import 'package:save_environment/widgets/login_signup_widget/or_divider.dart';
