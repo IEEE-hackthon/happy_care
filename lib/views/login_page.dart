@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:save_environment/views/sign_up_page.dart';
 import 'package:save_environment/widgets/login_signup_widget/fullname_text_field.dart';
-import 'package:save_environment/widgets/login_signup_widget/login_button.dart';
+import 'package:save_environment/widgets/login_signup_widget/login_signup_button.dart';
 import 'package:save_environment/widgets/login_signup_widget/or_divider.dart';
 import 'package:save_environment/widgets/login_signup_widget/password_text_field.dart';
 import 'package:save_environment/widgets/login_signup_widget/remember_forget.dart';
-import 'package:save_environment/widgets/login_signup_widget/signup.dart';
+import 'package:save_environment/widgets/login_signup_widget/signup_login_text.dart';
 import 'package:save_environment/widgets/login_signup_widget/social_button.dart';
 import 'package:save_environment/widgets/login_signup_widget/welcome_text.dart';
 
@@ -53,7 +54,9 @@ class LogInPage extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.035,
                 ),
-                LoginButton(
+                LoginAndSignUpButton(
+                  onTap: () {},
+                  label: 'Log In',
                   height: screenHeight * 0.05,
                   fontSize: screenWidth * 0.05,
                   backgroundColor: const Color(0xff99BA60),
@@ -75,7 +78,16 @@ class LogInPage extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.029,
                 ),
-                SignUpText(
+                SignUpAndLogInText(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => SignUpPage(),
+                      ),
+                    );
+                  },
+                  labelOne: 'Don\'t have an account?',
+                  labelTwo: 'Sign Up',
                   fontSize: screenWidth * 0.045,
                   linkColor: const Color(0xff99BA60),
                   textColor: const Color(0xff717171),

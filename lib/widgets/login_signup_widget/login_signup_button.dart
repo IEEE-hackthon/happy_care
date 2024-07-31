@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 
-class LoginButton extends StatelessWidget {
+class LoginAndSignUpButton extends StatelessWidget {
   final double height;
   final double fontSize;
   final Color backgroundColor;
   final Color textColor;
+  final String label;
+  final void Function()? onTap;
 
-  const LoginButton({
+  LoginAndSignUpButton({
     super.key,
     required this.height,
     required this.fontSize,
     required this.backgroundColor,
     required this.textColor,
+    required this.label,
+    this.onTap,
   });
 
   @override
@@ -25,9 +29,9 @@ class LoginButton extends StatelessWidget {
         backgroundColor: backgroundColor,
         padding: EdgeInsets.symmetric(vertical: height / 3),
       ),
-      onPressed: () {},
+      onPressed: onTap,
       child: Text(
-        'Log In',
+        label,
         style: TextStyle(
           color: textColor,
           fontSize: fontSize,

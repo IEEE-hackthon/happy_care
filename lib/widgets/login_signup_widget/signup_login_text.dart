@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:save_environment/views/sign_up_page.dart';
 
-class SignUpText extends StatelessWidget {
+class SignUpAndLogInText extends StatelessWidget {
   final double fontSize;
   final Color linkColor;
   final Color textColor;
+  final String labelOne;
+  final String labelTwo;
+  final void Function()? onTap;
 
-  const SignUpText({
+  const SignUpAndLogInText({
     super.key,
     required this.fontSize,
     required this.linkColor,
     required this.textColor,
+    required this.labelOne,
+    required this.labelTwo,
+    this.onTap,
   });
 
   @override
@@ -19,22 +24,16 @@ class SignUpText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Don\'t have an account?',
+          labelOne,
           style: TextStyle(
             color: textColor,
             fontSize: fontSize,
           ),
         ),
         TextButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => SignUpPage(),
-              ),
-            );
-          },
+          onPressed: onTap,
           child: Text(
-            'Sign Up',
+            labelTwo,
             style: TextStyle(
               color: linkColor,
               fontSize: fontSize,

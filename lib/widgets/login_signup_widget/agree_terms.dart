@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class RememberMeAndForgotPassword extends StatelessWidget {
+class AgreeTerms extends StatelessWidget {
   final double iconSpacing;
   final double fontSize;
-  const RememberMeAndForgotPassword({
+  const AgreeTerms({
     super.key,
     required this.iconSpacing,
     required this.fontSize,
@@ -22,23 +22,13 @@ class RememberMeAndForgotPassword extends StatelessWidget {
             ),
             SizedBox(width: iconSpacing),
             Text(
-              'Remember me',
+              'I agree to the terms of use',
               style: TextStyle(
                 color: const Color(0xff717171),
                 fontSize: fontSize,
               ),
             ),
           ],
-        ),
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            'Forget Password?',
-            style: TextStyle(
-              color: const Color(0xff717171),
-              fontSize: fontSize,
-            ),
-          ),
         ),
       ],
     );
