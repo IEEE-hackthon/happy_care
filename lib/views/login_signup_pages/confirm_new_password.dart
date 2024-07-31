@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:save_environment/views/login_signup_pages/login_page.dart';
 import 'package:save_environment/widgets/login_signup_widget/iconfider_image.dart';
 import 'package:save_environment/widgets/login_signup_widget/login_signup_button.dart';
 import 'package:save_environment/widgets/login_signup_widget/text_confirm_page.dart';
 
-class ConfirmedPage extends StatelessWidget {
-  const ConfirmedPage({super.key});
+class ConfirmNewPassword extends StatelessWidget {
+  const ConfirmNewPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,20 +28,26 @@ class ConfirmedPage extends StatelessWidget {
                 height: screenHeight * 0.040,
               ),
               const TitleText(
-                textOne: 'The account has been',
-                textTwo: 'confirmed successfully',
-                textThree: 'Glad to welcome you !',
+                textOne: 'The password changed',
+                textTwo: 'successfully',
+                textThree: 'You can now log in again !',
               ),
               SizedBox(
                 height: screenHeight * 0.033,
               ),
               LoginAndSignUpButton(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const LogInPage(),
+                      ),
+                    );
+                  },
                   height: screenHeight * 0.05,
                   fontSize: screenWidth * 0.05,
                   backgroundColor: const Color(0xff99BA60),
                   textColor: Colors.white,
-                  label: 'Get started')
+                  label: 'Log in')
             ],
           ),
         );

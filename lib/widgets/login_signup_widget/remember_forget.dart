@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 class RememberMeAndForgotPassword extends StatelessWidget {
   final double iconSpacing;
   final double fontSize;
+  final void Function()? onTap;
+
   const RememberMeAndForgotPassword({
     super.key,
     required this.iconSpacing,
     required this.fontSize,
+    this.onTap,
   });
 
   @override
@@ -31,7 +34,7 @@ class RememberMeAndForgotPassword extends StatelessWidget {
           ],
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: onTap,
           child: Text(
             'Forget Password?',
             style: TextStyle(

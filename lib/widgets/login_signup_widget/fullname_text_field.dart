@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class FullNameTextField extends StatelessWidget {
-  const FullNameTextField({super.key});
-
+  const FullNameTextField({super.key, required this.label});
+  final String label;
   @override
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        labelText: 'Full name',
+        labelText: label,
         labelStyle: const TextStyle(
           color: Color(0xff717171),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:save_environment/views/login_signup_pages/confirmed_page.dart';
+import 'package:save_environment/views/login_signup_pages/forget_password.dart';
 import 'package:save_environment/views/login_signup_pages/sign_up_page.dart';
 import 'package:save_environment/widgets/login_signup_widget/fullname_text_field.dart';
 import 'package:save_environment/widgets/login_signup_widget/login_signup_button.dart';
@@ -38,7 +39,9 @@ class LogInPage extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.03,
                 ),
-                const FullNameTextField(),
+                const FullNameTextField(
+                  label: 'Full name',
+                ),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
@@ -49,6 +52,13 @@ class LogInPage extends StatelessWidget {
                   height: screenHeight * 0.015,
                 ),
                 RememberMeAndForgotPassword(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const ForgetPassword(),
+                      ),
+                    );
+                  },
                   iconSpacing: screenWidth * 0.01,
                   fontSize: screenWidth * 0.04,
                 ),

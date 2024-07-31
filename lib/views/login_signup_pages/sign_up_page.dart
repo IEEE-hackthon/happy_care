@@ -39,7 +39,9 @@ class SignUpPage extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.03,
                 ),
-                const FullNameTextField(),
+                const FullNameTextField(
+                  label: 'Full name',
+                ),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
