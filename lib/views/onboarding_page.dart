@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../models/onboarding_page_model.dart';
+import '../widgets/onboarding/onboarding_button_widget.dart';
+import '../widgets/onboarding/onboarding_indicator_widget.dart';
+import '../widgets/onboarding/onboarding_widget.dart';
 import 'login_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -55,7 +57,8 @@ class OnboardingScreenState extends State<OnboardingScreen> {
           PageView(
             controller: _pageController,
             onPageChanged: (index) => setState(() => _currentPage = index),
-            children: pages.map(buildPage).toList(),
+            children:
+                pages.map((page) => OnboardingPageWidget(page: page)).toList(),
           ),
           if (_currentPage < pages.length - 1)
             Positioned(
@@ -74,82 +77,21 @@ class OnboardingScreenState extends State<OnboardingScreen> {
             right: 16.0,
             child: Column(
               children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0)),
-                    minimumSize: const Size(double.infinity, 50.0),
-                    backgroundColor: pages[_currentPage].buttonColor,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 32.0, vertical: 12.0),
-                  ),
-                  onPressed: () {
-                    if (_currentPage < pages.length - 1) {
-                      _pageController.nextPage(
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut);
-                    } else {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LogInPage()));
-                    }
-                  },
-                  child: Text(
-                      _currentPage == pages.length - 1 ? 'Get Started' : 'Next',
-                      style: const TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500)),
+                OnboardingButtonWidget(
+                  pageController: _pageController,
+                  currentPage: _currentPage,
+                  pages: pages,
                 ),
                 const SizedBox(height: 20.0),
-                SmoothPageIndicator(
-                  controller: _pageController,
-                  count: pages.length,
-                  effect: ExpandingDotsEffect(
-                    dotColor: Colors.grey,
-                    activeDotColor: pages[_currentPage].buttonColor,
-                    expansionFactor: 4,
-                    dotHeight: 5.0,
-                    dotWidth: 8.0,
-                  ),
+                OnboardingIndicatorWidget(
+                  pageController: _pageController,
+                  currentPage: _currentPage,
+                  pages: pages,
                 ),
               ],
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget buildPage(OnboardingPage page) {
-    return Container(
-      decoration: BoxDecoration(
-        image:
-            DecorationImage(image: AssetImage(page.image), fit: BoxFit.cover),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Spacer(flex: 10),
-            Text(page.title,
-                style: TextStyle(
-                    fontSize: 32.0,
-                    fontWeight: FontWeight.bold,
-                    color: page.buttonColor)),
-            const SizedBox(height: 16.0),
-            Text(page.description,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20.0,
-                    color: Colors.white70)),
-            const Spacer(flex: 3),
-          ],
-        ),
       ),
     );
   }
