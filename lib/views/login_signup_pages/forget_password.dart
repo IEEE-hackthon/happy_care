@@ -11,8 +11,8 @@ class ForgetPassword extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('Forget Password'),
-          titleTextStyle: TextStyle(
+          title: const Text('Forget Password'),
+          titleTextStyle: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 22,
             color: Colors.black,
@@ -35,14 +35,14 @@ class ForgetPassword extends StatelessWidget {
                   SizedBox(
                     height: screenHeight * 0.065,
                   ),
-                  Text(
+                  const Text(
                     'Please enter your email !',
                     style: TextStyle(fontSize: 16),
                   ),
                   SizedBox(
                     height: screenHeight * 0.075,
                   ),
-                  FullNameTextField(
+                  const FullNameTextField(
                     label: 'Enter Your Email',
                   ),
                   SizedBox(
@@ -51,7 +51,7 @@ class ForgetPassword extends StatelessWidget {
                   LoginAndSignUpButton(
                     height: screenHeight * 0.05,
                     fontSize: screenWidth * 0.05,
-                    backgroundColor: Color(0xff99BA60),
+                    backgroundColor: const Color(0xff99BA60),
                     textColor: Colors.white,
                     label: 'Send verification code',
                     onTap: () {

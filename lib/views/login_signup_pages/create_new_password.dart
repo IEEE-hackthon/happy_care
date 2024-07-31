@@ -11,8 +11,8 @@ class CreateNewPassword extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Create new password'),
-        titleTextStyle: TextStyle(
+        title: const Text('Create new password'),
+        titleTextStyle: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 22,
           color: Colors.black,
@@ -35,13 +35,13 @@ class CreateNewPassword extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.065,
                 ),
-                PasswordTextField(
+                const PasswordTextField(
                   label: 'Password',
                 ),
                 SizedBox(
                   height: screenHeight * 0.015,
                 ),
-                PasswordTextField(
+                const PasswordTextField(
                   label: 'Confirm Password',
                 ),
                 SizedBox(
@@ -57,7 +57,7 @@ class CreateNewPassword extends StatelessWidget {
                   },
                   height: screenHeight * 0.05,
                   fontSize: screenWidth * 0.05,
-                  backgroundColor: Color(0xff99BA60),
+                  backgroundColor: const Color(0xff99BA60),
                   textColor: Colors.white,
                   label: 'Confirm',
                 )
