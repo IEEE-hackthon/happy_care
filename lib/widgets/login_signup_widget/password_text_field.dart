@@ -9,22 +9,22 @@ class PasswordTextField extends StatelessWidget {
       obscureText: true,
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: TextStyle(
+        labelStyle: const TextStyle(
           color: Color(0xff717171),
         ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Color(0xffE5D0A7),
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(
+          borderSide: const BorderSide(
             color: Color(0xff99BA60),
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
-        suffixIcon: Icon(
+        suffixIcon: const Icon(
           Icons.visibility_off,
         ),
       ),

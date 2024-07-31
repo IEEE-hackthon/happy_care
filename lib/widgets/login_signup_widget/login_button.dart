@@ -7,12 +7,12 @@ class LoginButton extends StatelessWidget {
   final Color textColor;
 
   const LoginButton({
-    Key? key,
+    super.key,
     required this.height,
     required this.fontSize,
     required this.backgroundColor,
     required this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

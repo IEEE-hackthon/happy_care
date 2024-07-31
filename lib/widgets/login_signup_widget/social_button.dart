@@ -5,10 +5,10 @@ class SocialButtons extends StatelessWidget {
   final double spacing;
 
   const SocialButtons({
-    Key? key,
+    super.key,
     required this.iconSize,
     required this.spacing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class SocialButtons extends StatelessWidget {
         ElevatedButton(
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
-              side: BorderSide(
+              side: const BorderSide(
                 color: Color(0xff717171),
               ),
               borderRadius: BorderRadius.circular(8.0),

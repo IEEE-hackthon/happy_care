@@ -5,10 +5,10 @@ class RememberMeAndForgotPassword extends StatelessWidget {
   final double fontSize;
 
   const RememberMeAndForgotPassword({
-    Key? key,
+    super.key,
     required this.iconSpacing,
     required this.fontSize,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class RememberMeAndForgotPassword extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(
+            const Icon(
               Icons.check_box_outline_blank_rounded,
               color: Color(0xff717171),
             ),
@@ -25,7 +25,7 @@ class RememberMeAndForgotPassword extends StatelessWidget {
             Text(
               'Remember me',
               style: TextStyle(
-                color: Color(0xff717171),
+                color: const Color(0xff717171),
                 fontSize: fontSize,
               ),
             ),
@@ -36,7 +36,7 @@ class RememberMeAndForgotPassword extends StatelessWidget {
           child: Text(
             'Forget Password?',
             style: TextStyle(
-              color: Color(0xff717171),
+              color: const Color(0xff717171),
               fontSize: fontSize,
             ),
           ),

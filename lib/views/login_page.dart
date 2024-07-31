@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:save_environment/widgets/login_signup_widget/fullname_text_field.dart';
 import 'package:save_environment/widgets/login_signup_widget/login_button.dart';
 import 'package:save_environment/widgets/login_signup_widget/or_divider.dart';
@@ -31,17 +30,17 @@ class LogInPage extends StatelessWidget {
               children: [
                 WelcomeText(
                   fontSize: screenWidth * 0.07,
-                  color: Color(0xff99BA60),
+                  color: const Color(0xff99BA60),
                   label: 'Welcome back !',
                 ),
                 SizedBox(
                   height: screenHeight * 0.03,
                 ),
-                FullNameTextField(),
+                const FullNameTextField(),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
-                PasswordTextField(
+                const PasswordTextField(
                   label: 'Password',
                 ),
                 SizedBox(
@@ -57,7 +56,7 @@ class LogInPage extends StatelessWidget {
                 LoginButton(
                   height: screenHeight * 0.07,
                   fontSize: screenWidth * 0.05,
-                  backgroundColor: Color(0xff99BA60),
+                  backgroundColor: const Color(0xff99BA60),
                   textColor: Colors.white,
                 ),
                 SizedBox(
@@ -78,8 +77,8 @@ class LogInPage extends StatelessWidget {
                 ),
                 SignUpText(
                   fontSize: screenWidth * 0.045,
-                  linkColor: Color(0xff99BA60),
-                  textColor: Color(0xff717171),
+                  linkColor: const Color(0xff99BA60),
+                  textColor: const Color(0xff717171),
                 ),
               ],
             ),

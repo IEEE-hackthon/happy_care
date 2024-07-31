@@ -6,11 +6,11 @@ class WelcomeText extends StatelessWidget {
   final String label;
 
   const WelcomeText({
-    Key? key,
+    super.key,
     required this.fontSize,
     required this.color,
     required this.label,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

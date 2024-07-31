@@ -6,11 +6,11 @@ class SignUpText extends StatelessWidget {
   final Color textColor;
 
   const SignUpText({
-    Key? key,
+    super.key,
     required this.fontSize,
     required this.linkColor,
     required this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
