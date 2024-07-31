@@ -54,7 +54,7 @@ class LogInPage extends StatelessWidget {
                   height: screenHeight * 0.035,
                 ),
                 LoginButton(
-                  height: screenHeight * 0.07,
+                  height: screenHeight * 0.05,
                   fontSize: screenWidth * 0.05,
                   backgroundColor: const Color(0xff99BA60),
                   textColor: Colors.white,

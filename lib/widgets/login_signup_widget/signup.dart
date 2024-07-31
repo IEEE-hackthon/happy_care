@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:save_environment/views/sign_up_page.dart';
 
 class SignUpText extends StatelessWidget {
   final double fontSize;
@@ -25,7 +26,13 @@ class SignUpText extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => SignUpPage(),
+              ),
+            );
+          },
           child: Text(
             'Sign Up',
             style: TextStyle(
