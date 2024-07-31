@@ -7,7 +7,6 @@ class EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: true,
       decoration: InputDecoration(
         labelText: 'Email',
         labelStyle: const TextStyle(
