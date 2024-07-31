@@ -59,7 +59,7 @@ class LogInPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => ConfirmedPage(),
+                        builder: (context) => const ConfirmedPage(),
                       ),
                     );
                   },
@@ -89,7 +89,7 @@ class LogInPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => SignUpPage(),
+                        builder: (context) => const SignUpPage(),
                       ),
                     );
                   },

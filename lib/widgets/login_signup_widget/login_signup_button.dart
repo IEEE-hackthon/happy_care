@@ -8,7 +8,7 @@ class LoginAndSignUpButton extends StatelessWidget {
   final String label;
   final void Function()? onTap;
 
-  LoginAndSignUpButton({
+  const LoginAndSignUpButton({
     super.key,
     required this.height,
     required this.fontSize,

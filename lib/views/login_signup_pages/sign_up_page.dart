@@ -43,17 +43,17 @@ class SignUpPage extends StatelessWidget {
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
-                EmailTextField(),
+                const EmailTextField(),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
-                PasswordTextField(
+                const PasswordTextField(
                   label: 'Password',
                 ),
                 SizedBox(
                   height: screenHeight * 0.02,
                 ),
-                PasswordTextField(
+                const PasswordTextField(
                   label: 'Confirm Password',
                 ),
                 SizedBox(
@@ -70,7 +70,7 @@ class SignUpPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => ConfirmedPage(),
+                        builder: (context) => const ConfirmedPage(),
                       ),
                     );
                   },
@@ -105,7 +105,7 @@ class SignUpPage extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => LogInPage(),
+                        builder: (context) => const LogInPage(),
                       ),
                     );
                   },
