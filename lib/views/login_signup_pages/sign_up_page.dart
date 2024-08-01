@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:save_environment/views/login_signup_pages/confirmed_page.dart';
-import 'package:save_environment/views/login_signup_pages/login_page.dart';
-import 'package:save_environment/widgets/login_signup_widget/agree_terms.dart';
-import 'package:save_environment/widgets/login_signup_widget/email_text_field.dart';
-import 'package:save_environment/widgets/login_signup_widget/fullname_text_field.dart';
-import 'package:save_environment/widgets/login_signup_widget/login_signup_button.dart';
-import 'package:save_environment/widgets/login_signup_widget/or_divider.dart';
-import 'package:save_environment/widgets/login_signup_widget/password_text_field.dart';
-import 'package:save_environment/widgets/login_signup_widget/signup_login_text.dart';
-import 'package:save_environment/widgets/login_signup_widget/social_button.dart';
-import 'package:save_environment/widgets/login_signup_widget/welcome_text.dart';
+
+import '../../widgets/loginAndRegistration/agree_terms.dart';
+import '../../widgets/loginAndRegistration/custom_buttom.dart';
+import '../../widgets/loginAndRegistration/custom_textField.dart';
+import '../../widgets/loginAndRegistration/or_continue_with_divider.dart';
+import '../../widgets/loginAndRegistration/registration_label.dart';
+import '../../widgets/loginAndRegistration/social_button.dart';
+import '../../widgets/loginAndRegistration/welcome_text.dart';
+import 'confirmed_page.dart';
+import 'login_page.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -17,105 +16,78 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          double screenWidth = constraints.maxWidth;
-          double screenHeight = constraints.maxHeight;
-          double horizontalPadding = screenWidth * 0.05;
-          double verticalPadding = screenHeight * 0.05;
-
-          return Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding, vertical: verticalPadding),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                WelcomeText(
-                  fontSize: screenWidth * 0.07,
-                  color: const Color(0xff99BA60),
-                  label: 'Create Account',
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const WelcomeText(
+                fontSize: 28.0,
+                color: Color(0xff8fba52),
+                label: 'Create Account',
+              ),
+              const SizedBox(height: 20.0),
+              const CustomTextField(
+                label: 'Full name',
+                keyboardType: TextInputType.name,
+              ),
+              const SizedBox(height: 15.0),
+              const CustomTextField(
+                label: 'Email',
+                keyboardType: TextInputType.emailAddress,
+                icon: Icon(Icons.email_outlined, color: Color(0xff717171)),
+              ),
+              const SizedBox(height: 15.0),
+              const CustomTextField(
+                label: 'Password',
+                obscureText: true,
+                icon: Icon(Icons.visibility_off, color: Color(0xff717171)),
+              ),
+              const SizedBox(height: 15.0),
+              const CustomTextField(
+                label: 'Confirm Password',
+                obscureText: true,
+                icon: Icon(Icons.visibility_off, color: Color(0xff717171)),
+              ),
+              const SizedBox(height: 10.0),
+              const AgreeTerms(
+                iconSpacing: 5,
+                fontSize: 15,
+              ),
+              const SizedBox(height: 25.0),
+              CustomButton(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ConfirmedPage(),
+                    ),
+                  );
+                },
+                label: 'Sign Up',
+                height: 50,
+                fontSize: 20,
+                backgroundColor: const Color(0xff99BA60),
+                textColor: Colors.white,
+              ),
+              const SizedBox(height: 20.0),
+              const OrContinueWithDivider(fontSize: 16.0),
+              const SizedBox(height: 20.0),
+              const SocialButtons(),
+              const SizedBox(height: 20.0),
+              RegistrationLabel(
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const LogInPage(),
+                  ),
                 ),
-                SizedBox(
-                  height: screenHeight * 0.03,
-                ),
-                const FullNameTextField(
-                  label: 'Full name',
-                ),
-                SizedBox(
-                  height: screenHeight * 0.02,
-                ),
-                const EmailTextField(),
-                SizedBox(
-                  height: screenHeight * 0.02,
-                ),
-                const PasswordTextField(
-                  label: 'Password',
-                ),
-                SizedBox(
-                  height: screenHeight * 0.02,
-                ),
-                const PasswordTextField(
-                  label: 'Confirm Password',
-                ),
-                SizedBox(
-                  height: screenHeight * 0.015,
-                ),
-                AgreeTerms(
-                  iconSpacing: screenWidth * 0.0,
-                  fontSize: screenWidth * 0.04,
-                ),
-                SizedBox(
-                  height: screenHeight * 0.035,
-                ),
-                LoginAndSignUpButton(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const ConfirmedPage(),
-                      ),
-                    );
-                  },
-                  label: 'Sign Up',
-                  height: screenHeight * 0.05,
-                  fontSize: screenWidth * 0.05,
-                  backgroundColor: const Color(0xff99BA60),
-                  textColor: Colors.white,
-                ),
-                SizedBox(
-                  height: screenHeight * 0.025,
-                ),
-                OrContinueWithDivider(
-                  fontSize: screenWidth * 0.04,
-                ),
-                SizedBox(
-                  height: screenHeight * 0.024,
-                ),
-                SocialButtons(
-                  iconSize: screenHeight * 0.03,
-                  spacing: screenWidth * 0.06,
-                ),
-                SizedBox(
-                  height: screenHeight * 0.029,
-                ),
-                SignUpAndLogInText(
-                  labelOne: 'Already have an account',
-                  labelTwo: 'Log in',
-                  fontSize: screenWidth * 0.045,
-                  linkColor: const Color(0xff99BA60),
-                  textColor: const Color(0xff717171),
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const LogInPage(),
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
-          );
-        },
+                prefixText: 'Already have an account ',
+                linkText: 'Log in',
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

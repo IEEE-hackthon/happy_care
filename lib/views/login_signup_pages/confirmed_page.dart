@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:save_environment/widgets/login_signup_widget/iconfider_image.dart';
-import 'package:save_environment/widgets/login_signup_widget/login_signup_button.dart';
-import 'package:save_environment/widgets/login_signup_widget/text_confirm_page.dart';
+
+import '../../widgets/loginAndRegistration/custom_buttom.dart';
+import '../../widgets/loginAndRegistration/iconfider_image.dart';
+import '../../widgets/loginAndRegistration/text_confirm_page.dart';
+import '../home/choose_page.dart';
 
 class ConfirmedPage extends StatelessWidget {
   const ConfirmedPage({super.key});
@@ -34,8 +36,12 @@ class ConfirmedPage extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.033,
               ),
-              LoginAndSignUpButton(
-                  onTap: () {},
+              CustomButton(
+                  onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ChoosePage(),
+                        ),
+                      ),
                   height: screenHeight * 0.05,
                   fontSize: screenWidth * 0.05,
                   backgroundColor: const Color(0xff99BA60),

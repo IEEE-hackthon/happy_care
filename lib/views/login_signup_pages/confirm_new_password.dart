@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:save_environment/views/login_signup_pages/login_page.dart';
-import 'package:save_environment/widgets/login_signup_widget/iconfider_image.dart';
-import 'package:save_environment/widgets/login_signup_widget/login_signup_button.dart';
-import 'package:save_environment/widgets/login_signup_widget/text_confirm_page.dart';
+
+import '../../widgets/loginAndRegistration/custom_buttom.dart';
+import '../../widgets/loginAndRegistration/iconfider_image.dart';
+import '../../widgets/loginAndRegistration/text_confirm_page.dart';
+import 'login_page.dart';
 
 class ConfirmNewPassword extends StatelessWidget {
   const ConfirmNewPassword({super.key});
@@ -35,7 +36,7 @@ class ConfirmNewPassword extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.033,
               ),
-              LoginAndSignUpButton(
+              CustomButton(
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(

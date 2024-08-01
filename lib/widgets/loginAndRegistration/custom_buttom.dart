@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LoginAndSignUpButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final double height;
   final double fontSize;
   final Color backgroundColor;
@@ -8,7 +8,7 @@ class LoginAndSignUpButton extends StatelessWidget {
   final String label;
   final void Function()? onTap;
 
-  const LoginAndSignUpButton({
+  const CustomButton({
     super.key,
     required this.height,
     required this.fontSize,

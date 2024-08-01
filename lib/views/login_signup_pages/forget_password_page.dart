@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/loginAndRegistration/custom_buttom.dart';
 import '../../widgets/loginAndRegistration/custom_textField.dart';
-import 'confirm_new_password.dart';
+import 'create_new_password.dart';
 
-class CreateNewPassword extends StatelessWidget {
-  const CreateNewPassword({super.key});
+class ForgetPasswordPage extends StatelessWidget {
+  const ForgetPasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Create new password'),
+        title: const Text('Forget Password'),
         titleTextStyle: const TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 22,
@@ -26,27 +26,26 @@ class CreateNewPassword extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20.0),
-            const CustomTextField(
-              label: 'Password',
-              obscureText: true,
-              icon: Icon(Icons.visibility_off, color: Color(0xff717171)),
+            const Text(
+              'Please enter your email!',
+              style: TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20.0),
             const CustomTextField(
-                label: 'Confirm Password',
-                obscureText: true,
-                icon: Icon(Icons.visibility_off, color: Color(0xff717171))),
+              label: 'Enter Your Email',
+              keyboardType: TextInputType.emailAddress,
+            ),
             const SizedBox(height: 40.0),
             CustomButton(
               height: 50.0,
               fontSize: 20.0,
               backgroundColor: const Color(0xff99BA60),
               textColor: Colors.white,
-              label: 'Confirm',
+              label: 'Send verification code',
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const ConfirmNewPassword(),
+                    builder: (context) => const CreateNewPassword(),
                   ),
                 );
               },

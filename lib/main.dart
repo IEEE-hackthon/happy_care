@@ -13,7 +13,7 @@ class SaveEnvironmentApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Todo List',
+      title: 'saveEnvironment',
       theme: ThemeData(
         useMaterial3: true,
         fontFamily: 'Work Sans',
