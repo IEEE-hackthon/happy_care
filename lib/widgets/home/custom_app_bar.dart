@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../views/profile_page.dart';
+import '../../views/profile/profile_page.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color borderColor;

@@ -9,6 +9,7 @@ class AnimalsSearchPage extends StatelessWidget {
     return const SearchWidget(
       coverPhoto: 'assets/search/Pet care.png',
       borderColor: Colors.orange,
+      leabel: 'Let\'s find something!',
     );
   }
 }

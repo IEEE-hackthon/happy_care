@@ -13,6 +13,7 @@ class PlanetsSearchPage extends StatelessWidget {
     return const SearchWidget(
       coverPhoto: 'assets/search/flower.png',
       borderColor: Color(0xff99BA60),
+      leabel: 'Let\'s find something!',
     );
   }
 }
