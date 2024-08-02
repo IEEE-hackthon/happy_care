@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../models/plant_and_animal_model.dart';
 
 class PlantList extends StatefulWidget {
-  const PlantList({super.key});
+  const PlantList({super.key, required this.color, required this.height});
+  final Color color;
+  final double height;
 
   @override
   State<PlantList> createState() => _PlantListState();
@@ -41,13 +43,17 @@ class _PlantListState extends State<PlantList> {
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: SizedBox(
-        height: 220,
+        height: widget.height,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: plants.length,
           itemBuilder: (context, index) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: PlantCard(plant: plants[index]),
+            child: PlantCard(
+              plant: plants[index],
+              color: widget.color,
+              height: widget.height,
+            ),
           ),
         ),
       ),
@@ -57,8 +63,14 @@ class _PlantListState extends State<PlantList> {
 
 class PlantCard extends StatefulWidget {
   final PlantModel plant;
+  final Color color;
+  final double height;
 
-  const PlantCard({super.key, required this.plant});
+  const PlantCard(
+      {super.key,
+      required this.plant,
+      required this.color,
+      required this.height});
 
   @override
   PlantCardState createState() => PlantCardState();
@@ -72,7 +84,7 @@ class PlantCardState extends State<PlantCard> {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        height: 190,
+        height: widget.height,
         width: 170,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -92,7 +104,7 @@ class PlantCardState extends State<PlantCard> {
               Image.network(
                 widget.plant.imageUrl,
                 fit: BoxFit.cover,
-                height: 190,
+                height: widget.height,
                 width: 170,
                 errorBuilder: (context, error, stackTrace) => Center(
                   child: Image.asset(
@@ -106,13 +118,13 @@ class PlantCardState extends State<PlantCard> {
               Positioned(
                 top: 8,
                 right: 8,
-                child: _buildBookmarkButton(),
+                child: _buildBookmarkButton(widget.color),
               ),
               Positioned(
                 bottom: 0,
                 left: 0,
                 right: 0,
-                child: PlantDetails(plant: widget.plant),
+                child: PlantDetails(plant: widget.plant, color: widget.color),
               ),
             ],
           ),
@@ -121,7 +133,7 @@ class PlantCardState extends State<PlantCard> {
     );
   }
 
-  Widget _buildBookmarkButton() {
+  Widget _buildBookmarkButton(Color color) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
@@ -137,7 +149,7 @@ class PlantCardState extends State<PlantCard> {
             isBookmarked
                 ? Icons.favorite_rounded
                 : Icons.favorite_border_rounded,
-            color: const Color(0xff8fba52),
+            color: color,
             size: 35,
           ),
         ),
@@ -148,15 +160,16 @@ class PlantCardState extends State<PlantCard> {
 
 class PlantDetails extends StatelessWidget {
   final PlantModel plant;
+  final Color color;
 
-  const PlantDetails({super.key, required this.plant});
+  const PlantDetails({super.key, required this.plant, required this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 45,
       decoration: BoxDecoration(
-        color: const Color(0xff8fba52).withOpacity(0.5),
+        color: color.withOpacity(0.5),
         borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
