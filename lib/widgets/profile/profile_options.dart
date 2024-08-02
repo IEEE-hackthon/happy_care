@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:save_environment/views/profile/edit_profile_page.dart';
 import 'package:save_environment/widgets/profile/expansion_tile.dart';
 import 'package:save_environment/widgets/profile/profile_option.dart';
 
@@ -7,9 +8,16 @@ class ProfileOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         ProfileOption(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => EditProfilePage(),
+              ),
+            );
+          },
           title: 'Personal Info',
           icon: Icons.insert_drive_file_outlined,
         ),
