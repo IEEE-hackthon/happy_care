@@ -14,37 +14,37 @@ class ProfileOptions extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => EditProfilePage(),
+                builder: (context) => const EditProfilePage(),
               ),
             );
           },
           title: 'Personal Info',
           icon: Icons.insert_drive_file_outlined,
         ),
-        ProfileOption(
+        const ProfileOption(
           title: 'Reviews',
           icon: Icons.reviews_outlined,
         ),
-        ProfileOption(
+        const ProfileOption(
           title: 'My Plants',
           icon: Icons.local_florist,
         ),
-        ProfileOption(
+        const ProfileOption(
           title: 'My Animals',
           icon: Icons.pets,
         ),
-        ProfileOption(
+        const ProfileOption(
           title: 'Favorites',
           icon: Icons.favorite_border,
         ),
-        ProfileOption(
+        const ProfileOption(
           title: 'Help & Support',
           icon: Icons.help_outline,
         ),
-        SizedBox(height: 8),
-        ExpansionTileEdit(),
-        SizedBox(height: 8),
-        ProfileOption(
+        const SizedBox(height: 8),
+        const ExpansionTileEdit(),
+        const SizedBox(height: 8),
+        const ProfileOption(
           title: 'Log out',
           icon: Icons.login_outlined,
           color: Color(0xffD2776E),
