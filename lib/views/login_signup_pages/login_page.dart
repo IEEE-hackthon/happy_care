@@ -30,12 +30,16 @@ class LogInPage extends StatelessWidget {
               ),
               const SizedBox(height: 20.0),
               const CustomTextField(
+                borderColor: Color(0xff99BA60),
+                fillColor: Color(0xffe7e7e7),
                 label: 'Email',
                 icon: Icon(Icons.email_outlined, color: Color(0xff717171)),
                 keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 15.0),
               const CustomTextField(
+                borderColor: Color(0xff99BA60),
+                fillColor: Color(0xffe7e7e7),
                 label: 'Password',
                 icon: Icon(Icons.visibility_off, color: Color(0xff717171)),
                 obscureText: true,

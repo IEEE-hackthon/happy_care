@@ -21,12 +21,16 @@ class CreateNewPassword extends StatelessWidget {
           children: [
             const SizedBox(height: 20.0),
             const CustomTextField(
+              borderColor: Color(0xff99BA60),
+              fillColor: Color(0xffe7e7e7),
               label: 'Password',
               obscureText: true,
               icon: Icon(Icons.visibility_off, color: Color(0xff717171)),
             ),
             const SizedBox(height: 20.0),
             const CustomTextField(
+                borderColor: Color(0xff99BA60),
+                fillColor: Color(0xffe7e7e7),
                 label: 'Confirm Password',
                 obscureText: true,
                 icon: Icon(Icons.visibility_off, color: Color(0xff717171))),

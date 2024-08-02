@@ -7,13 +7,16 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.icon,
+    required this.fillColor,
+    required this.borderColor,
   });
 
   final String label;
   final TextInputType keyboardType;
   final bool obscureText;
   final Icon? icon;
-
+  final Color fillColor;
+  final Color borderColor;
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -25,16 +28,16 @@ class CustomTextField extends StatelessWidget {
           color: Color(0xff717171),
         ),
         filled: true,
-        fillColor: const Color(0xffe7e7e7),
+        fillColor: fillColor,
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Color(0xff99BA60),
+          borderSide: BorderSide(
+            color: borderColor,
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Color(0xff99BA60),
+          borderSide: BorderSide(
+            color: borderColor,
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:save_environment/views/search_pages/search_animals_page.dart';
 
 import '../../../widgets/home/categorys_selector.dart';
 import '../../../widgets/home/custom_app_bar.dart';
@@ -49,7 +50,13 @@ class HomeAnimalState extends State<HomeAnimal> {
       ),
       body: CustomScrollView(
         slivers: [
-          const CustomSearchBar(),
+          CustomSearchBar(
+            onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const AnimalsSearchPage()),
+            ),
+          ),
           const SectionHeader(title: 'Recently Identified', seeMore: ''),
           const PlantList(
             color: HomeAnimal.primaryColor,
@@ -76,10 +83,6 @@ class HomeAnimalState extends State<HomeAnimal> {
             height: 260,
           ),
           const SectionHeader(title: 'Recently Identified', seeMore: ''),
-          const PlantList(
-            color: HomeAnimal.primaryColor,
-            height: 220,
-          ),
         ],
       ),
     );
