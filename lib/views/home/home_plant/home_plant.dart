@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../widgets/home/categorys_selector.dart';
-import '../../../widgets/home/custom_appBar.dart';
+import '../../../widgets/home/custom_app_bar.dart';
 import '../../../widgets/home/recently_identified.dart';
 import '../../../widgets/home/searsh_bar.dart';
 import '../../../widgets/home/section_header.dart';
@@ -30,7 +30,6 @@ class HomePlantState extends State<HomePlant> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      backgroundColor: Colors.white,
       floatingActionButton: const CustomFloatingActionButton(
         color: HomePlant.primaryColor,
       ),
@@ -50,7 +49,7 @@ class HomePlantState extends State<HomePlant> {
       ),
       body: CustomScrollView(
         slivers: [
-          CustomSearchBar(),
+          const CustomSearchBar(),
           const SectionHeader(title: 'Recently Identified', seeMore: ''),
           const PlantList(
             color: HomePlant.primaryColor,

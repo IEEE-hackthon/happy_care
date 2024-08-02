@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../widgets/loginAndRegistration/custom_buttom.dart';
 import '../../widgets/loginAndRegistration/iconfider_image.dart';
 import '../../widgets/loginAndRegistration/text_confirm_page.dart';
-import '../home/choose_page.dart';
+import '../choose_page.dart';
 
 class ConfirmedPage extends StatelessWidget {
   const ConfirmedPage({super.key});

@@ -6,18 +6,22 @@ class CustomFloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      onPressed: () {},
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25),
-        side: const BorderSide(
-          width: 3,
-          color: Colors.white,
+    return SizedBox(
+      width: 65,
+      height: 65,
+      child: FloatingActionButton(
+        onPressed: () {},
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(32.5),
+          side: const BorderSide(
+            width: 3,
+            color: Colors.white,
+          ),
         ),
+        backgroundColor: color,
+        elevation: 0,
+        child: const Icon(Icons.qr_code_scanner, size: 30, color: Colors.white),
       ),
-      backgroundColor: color,
-      elevation: 0,
-      child: const Icon(Icons.qr_code_scanner, size: 30, color: Colors.white),
     );
   }
 }

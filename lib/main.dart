@@ -15,6 +15,18 @@ class SaveEnvironmentApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'saveEnvironment',
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+          centerTitle: true,
+        ),
+        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
         fontFamily: 'Work Sans',
       ),

@@ -59,6 +59,7 @@ class BottomNavBar extends StatelessWidget {
             label,
             style: TextStyle(
               color: selectedIndex == index ? color : Colors.grey,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ],

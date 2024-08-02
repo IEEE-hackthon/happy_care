@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/home/category_card.dart';
-import 'home_animal/home_animal.dart';
-import 'home_plant/home_plant.dart';
+import '../widgets/home/category_card.dart';
+import 'home/home_animal/home_animal.dart';
+import 'home/home_plant/home_plant.dart';
 
 class ChoosePage extends StatelessWidget {
   const ChoosePage({super.key});
@@ -10,7 +10,7 @@ class ChoosePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfffaeec9),
+      backgroundColor: Colors.white,
       body: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth > constraints.maxHeight) {
