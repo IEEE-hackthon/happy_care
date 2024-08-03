@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:save_environment/views/home/splash_screen/splash_screen.dart';
+import 'package:save_environment/views/splash_screen/splash_screen.dart';
 
 void main() {
   runApp(const HappyCareApp());
