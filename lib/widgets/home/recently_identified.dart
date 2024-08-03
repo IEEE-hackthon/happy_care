@@ -1,44 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../../models/plant_and_animal_model.dart';
+import '../../views/details_page/details_page.dart';
 
 class PlantList extends StatefulWidget {
-  const PlantList({super.key, required this.color, required this.height});
+  const PlantList(
+      {super.key,
+      required this.color,
+      required this.height,
+      required this.plants,
+      required this.isPlant});
   final Color color;
   final double height;
+  final List<PlantAndAnimalModel> plants;
+  final bool isPlant;
 
   @override
   State<PlantList> createState() => _PlantListState();
 }
 
 class _PlantListState extends State<PlantList> {
-  final List<PlantModel> plants = [
-    PlantModel(
-      name: 'Snake Plant',
-      imageUrl:
-          'https://rosysoil.com/cdn/shop/articles/Dracaena-trifasciata-plant_900x.jpg?v=1671498817',
-      description: 'نبات الصبار هو نبات عصاري يتحمل الجفاف.',
-    ),
-    PlantModel(
-      name: 'Snake Plant',
-      imageUrl:
-          'https://www.dahingplants.com/cdn/shop/products/000109-01_1800x1800.jpg?v=1643729080',
-      description: 'نبات الصبار هو نبات عصاري يتحمل الجفاف.',
-    ),
-    PlantModel(
-      name: 'Snake Plant',
-      imageUrl:
-          'https://rosysoil.com/cdn/shop/articles/Dracaena-trifasciata-plant_900x.jpg?v=1671498817',
-      description: 'نبات الصبار هو نبات عصاري يتحمل الجفاف.',
-    ),
-    PlantModel(
-      name: 'Snake Plant',
-      imageUrl:
-          'https://www.dahingplants.com/cdn/shop/products/000109-01_1800x1800.jpg?v=1643729080',
-      description: 'نبات الصبار هو نبات عصاري يتحمل الجفاف.',
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -46,13 +27,14 @@ class _PlantListState extends State<PlantList> {
         height: widget.height,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: plants.length,
+          itemCount: widget.plants.length,
           itemBuilder: (context, index) => Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             child: PlantCard(
-              plant: plants[index],
+              plant: widget.plants[index],
               color: widget.color,
               height: widget.height,
+              isPlant: widget.isPlant,
             ),
           ),
         ),
@@ -62,15 +44,17 @@ class _PlantListState extends State<PlantList> {
 }
 
 class PlantCard extends StatefulWidget {
-  final PlantModel plant;
+  final PlantAndAnimalModel plant;
   final Color color;
   final double height;
+  final bool isPlant;
 
   const PlantCard(
       {super.key,
       required this.plant,
       required this.color,
-      required this.height});
+      required this.height,
+      required this.isPlant});
 
   @override
   PlantCardState createState() => PlantCardState();
@@ -82,7 +66,17 @@ class PlantCardState extends State<PlantCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailsPage(
+              plant: widget.plant,
+              isPlant: widget.isPlant,
+            ),
+          ),
+        );
+      },
       child: Container(
         height: widget.height,
         width: 170,
@@ -159,7 +153,7 @@ class PlantCardState extends State<PlantCard> {
 }
 
 class PlantDetails extends StatelessWidget {
-  final PlantModel plant;
+  final PlantAndAnimalModel plant;
   final Color color;
 
   const PlantDetails({super.key, required this.plant, required this.color});
@@ -180,7 +174,7 @@ class PlantDetails extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            plant.name,
+            plant.title,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 16,

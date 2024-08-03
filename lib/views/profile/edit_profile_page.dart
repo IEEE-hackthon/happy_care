@@ -16,17 +16,19 @@ class EditProfilePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15).copyWith(top: 40),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            BuildProfilePicture(
-              color: color,
-            ),
-            const SizedBox(height: 8),
-            const ProfileNameAndTitle(),
-            const SizedBox(height: 15),
-            const ProfileFields(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              BuildProfilePicture(
+                color: color,
+              ),
+              const SizedBox(height: 8),
+              const ProfileNameAndTitle(),
+              const SizedBox(height: 15),
+              const ProfileFields(),
+            ],
+          ),
         ),
       ),
     );
