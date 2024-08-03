@@ -24,10 +24,12 @@ class ProfileOption extends StatelessWidget {
         editTitle: Text(
           title,
           style: TextStyle(
+            overflow: TextOverflow.ellipsis,
             fontWeight: FontWeight.bold,
             fontSize: 19,
             color: color ?? Colors.black,
           ),
+          maxLines: 1,
         ),
         leadingIcon: Icon(icon, color: color ?? Colors.black),
       ),

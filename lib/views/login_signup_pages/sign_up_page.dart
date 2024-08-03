@@ -87,7 +87,7 @@ class SignUpPage extends StatelessWidget {
               RegistrationLabel(
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const LogInPage(),
+                    builder: (context) => const LoginPage(),
                   ),
                 ),
                 prefixText: 'Already have an account ',

@@ -40,7 +40,7 @@ class ConfirmNewPassword extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const LogInPage(),
+                        builder: (context) => const LoginPage(),
                       ),
                     );
                   },

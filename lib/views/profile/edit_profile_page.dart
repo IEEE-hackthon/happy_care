@@ -4,7 +4,8 @@ import 'package:save_environment/widgets/profile/edit_profile_fields.dart';
 import 'package:save_environment/widgets/profile/edit_profile_named_title.dart';
 
 class EditProfilePage extends StatelessWidget {
-  const EditProfilePage({super.key});
+  const EditProfilePage({super.key, required this.color});
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +16,16 @@ class EditProfilePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15).copyWith(top: 40),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            BuildProfilePicture(),
-            SizedBox(height: 8),
-            ProfileNameAndTitle(),
-            SizedBox(height: 15),
-            ProfileFields(),
+            BuildProfilePicture(
+              color: color,
+            ),
+            const SizedBox(height: 8),
+            const ProfileNameAndTitle(),
+            const SizedBox(height: 15),
+            const ProfileFields(),
           ],
         ),
       ),

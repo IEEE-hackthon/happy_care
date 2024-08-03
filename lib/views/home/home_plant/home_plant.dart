@@ -35,7 +35,7 @@ class HomePlantState extends State<HomePlant> {
         color: HomePlant.primaryColor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomNavBar(
+      bottomNavigationBar: CustomBottomNavBar(
         isPlant: true,
         color: HomePlant.primaryColor,
         selectedIndex: _selectedIndex,
@@ -82,7 +82,7 @@ class HomePlantState extends State<HomePlant> {
             color: HomePlant.primaryColor,
             height: 260,
           ),
-          const SectionHeader(title: 'Recently Identified', seeMore: ''),
+          const SliverToBoxAdapter(child: SizedBox(height: 80)),
         ],
       ),
     );

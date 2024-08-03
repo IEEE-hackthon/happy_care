@@ -10,8 +10,8 @@ import '../../widgets/loginAndRegistration/welcome_text.dart';
 import 'confirmed_page.dart';
 import 'sign_up_page.dart';
 
-class LogInPage extends StatelessWidget {
-  const LogInPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {

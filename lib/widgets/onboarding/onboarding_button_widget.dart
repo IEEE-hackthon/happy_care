@@ -31,7 +31,7 @@ class OnboardingButtonWidget extends StatelessWidget {
               curve: Curves.easeInOut);
         } else {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const LogInPage()));
+              MaterialPageRoute(builder: (context) => const LoginPage()));
         }
       },
       child: Text(currentPage == pages.length - 1 ? 'Get Started' : 'Next',

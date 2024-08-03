@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:save_environment/views/profile/edit_profile_page.dart';
 
 class ProfileHeader extends StatelessWidget {
-  const ProfileHeader({super.key});
-
+  const ProfileHeader({super.key, required this.color});
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         const CircleAvatar(
-          radius: 59,
+          radius: 40,
           backgroundImage:
               NetworkImage("https://avatar.iran.liara.run/public/31"),
         ),
@@ -29,15 +29,17 @@ class ProfileHeader extends StatelessWidget {
         ),
         const Spacer(),
         IconButton(
-          color: Colors.orange,
+          color: color,
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const EditProfilePage(),
+                builder: (context) => EditProfilePage(
+                  color: color,
+                ),
               ),
             );
           },
-          icon: const Icon(Icons.edit, color: Colors.orange),
+          icon: Icon(Icons.edit, color: color),
         ),
       ],
     );

@@ -37,11 +37,14 @@ class ConfirmedPage extends StatelessWidget {
                 height: screenHeight * 0.033,
               ),
               CustomButton(
-                  onTap: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const ChoosePage(),
-                        ),
+                  onTap: () {
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                        builder: (context) => const ChoosePage(),
                       ),
+                      (route) => false,
+                    );
+                  },
                   height: screenHeight * 0.05,
                   fontSize: screenWidth * 0.05,
                   backgroundColor: const Color(0xff99BA60),

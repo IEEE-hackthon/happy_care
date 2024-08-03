@@ -35,7 +35,7 @@ class HomeAnimalState extends State<HomeAnimal> {
         color: HomeAnimal.primaryColor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomNavBar(
+      bottomNavigationBar: CustomBottomNavBar(
         isPlant: false,
         color: HomeAnimal.primaryColor,
         selectedIndex: _selectedIndex,
@@ -82,7 +82,7 @@ class HomeAnimalState extends State<HomeAnimal> {
             color: HomeAnimal.primaryColor,
             height: 260,
           ),
-          const SectionHeader(title: 'Recently Identified', seeMore: ''),
+          const SliverToBoxAdapter(child: SizedBox(height: 80)),
         ],
       ),
     );

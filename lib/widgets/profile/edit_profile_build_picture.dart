@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BuildProfilePicture extends StatelessWidget {
-  const BuildProfilePicture({super.key});
+  const BuildProfilePicture({super.key, required this.color});
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +18,8 @@ class BuildProfilePicture extends StatelessWidget {
             bottom: 0,
             right: 0,
             child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.orange,
+              decoration: BoxDecoration(
+                color: color,
                 shape: BoxShape.circle,
               ),
               padding: const EdgeInsets.all(4),
