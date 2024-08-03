@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-
-import 'views/onboarding_page/onboarding_page.dart';
+import 'package:save_environment/views/splash_screen/splash_screen.dart';
 
 void main() {
-  runApp(const SaveEnvironmentApp());
+  runApp(const HappyCareApp());
 }
 
-class SaveEnvironmentApp extends StatelessWidget {
-  const SaveEnvironmentApp({super.key});
+class HappyCareApp extends StatelessWidget {
+  const HappyCareApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'saveEnvironment',
+      title: 'HappyCare',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
@@ -30,7 +29,7 @@ class SaveEnvironmentApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Work Sans',
       ),
-      home: const OnboardingScreen(),
+      home: const SplashScreen(),
     );
   }
 }
