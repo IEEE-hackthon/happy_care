@@ -1,35 +1,32 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:save_environment/views/onboarding_page/onboarding_page.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    _navigateToHome();
-  }
-
-  _navigateToHome() async {
-    await Future.delayed(const Duration(milliseconds: 2000), () {});
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const OnboardingScreen()),
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AnimatedSplashScreen(
       backgroundColor: const Color(0xff99BA60),
-      body: Center(
-        child: Image.asset('assets/splash/Group 118.png'),
+      duration: 5000,
+      splashIconSize: 400,
+      splash: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 200,
+            height: 200,
+            child: LottieBuilder.asset(
+              "assets/Lottie/Animation_FF9800.json",
+              repeat: true,
+            ),
+          ),
+        ],
       ),
+      nextScreen: const OnboardingScreen(),
     );
   }
 }
