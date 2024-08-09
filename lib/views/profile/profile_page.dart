@@ -6,7 +6,7 @@ import 'package:save_environment/widgets/profile/profile_options.dart';
 import '../../widgets/navigation_bar/custom_bottom_navBar.dart';
 import '../../widgets/navigation_bar/custom_floating_action_button.dart';
 import '../fav_page/fav_page.dart';
-import '../my_plant_and_pets/my_plant_and_pets_page.dart';
+import '../my_plant_and_pets/my_plant_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key, required this.themeColor});
@@ -39,7 +39,7 @@ class ProfilePageState extends State<ProfilePage> {
       bottomNavigationBar: CustomBottomNavBar(
         pages: [
           const HomePlant(),
-          const MyPlantAndPetPage(),
+          const MyPlant(),
           const FavPage(),
           ProfilePage(
             themeColor: widget.themeColor,

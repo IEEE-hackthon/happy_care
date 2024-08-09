@@ -10,7 +10,7 @@ import '../../../widgets/home/section_header.dart';
 import '../../../widgets/navigation_bar/custom_bottom_navBar.dart';
 import '../../../widgets/navigation_bar/custom_floating_action_button.dart';
 import '../../fav_page/fav_page.dart';
-import '../../my_plant_and_pets/my_plant_and_pets_page.dart';
+import '../../my_plant_and_pets/my_plant_page.dart';
 import '../../profile/profile_page.dart';
 
 class HomePlant extends StatefulWidget {
@@ -42,7 +42,7 @@ class HomePlantState extends State<HomePlant> {
       bottomNavigationBar: CustomBottomNavBar(
         pages: const [
           HomePlant(),
-          MyPlantAndPetPage(),
+          MyPlant(),
           FavPage(),
           ProfilePage(
             themeColor: HomePlant.primaryColor,

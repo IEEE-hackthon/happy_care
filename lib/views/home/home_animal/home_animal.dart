@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:save_environment/views/my_plant_and_pets/mt_pets_page.dart';
 import 'package:save_environment/views/search_pages/search_animals_page.dart';
 
 import '../../../models/plant_and_animal_model.dart';
@@ -10,7 +11,6 @@ import '../../../widgets/home/section_header.dart';
 import '../../../widgets/navigation_bar/custom_bottom_navBar.dart';
 import '../../../widgets/navigation_bar/custom_floating_action_button.dart';
 import '../../fav_page/fav_page.dart';
-import '../../my_plant_and_pets/my_plant_and_pets_page.dart';
 import '../../profile/profile_page.dart';
 
 class HomeAnimal extends StatefulWidget {
@@ -42,7 +42,7 @@ class HomeAnimalState extends State<HomeAnimal> {
       bottomNavigationBar: CustomBottomNavBar(
         pages: const [
           HomeAnimal(),
-          MyPlantAndPetPage(),
+          MyPets(),
           FavPage(),
           ProfilePage(
             themeColor: HomeAnimal.primaryColor,
