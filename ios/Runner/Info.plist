@@ -4,6 +4,8 @@
 	<dict>
 	    <key>NSCameraUsageDescription</key>
         <string>We need access to the camera to scan images.</string>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleDarkContent</string>
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>CFBundleDisplayName</key>

@@ -9,6 +9,12 @@
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowDrawsSystemBarBackgrounds">false</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <!-- Customize your splash screen here -->
+        <!-- Make the status bar translucent -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!-- Keep icons visible -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
     </style>
     <!-- Theme applied to the Android Window as soon as the process has started.
          This theme determines the color of the Android Window while your
