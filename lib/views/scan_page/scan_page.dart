@@ -13,6 +13,7 @@ class ScanPage extends StatefulWidget {
 class _ScanPageState extends State<ScanPage> {
   late CameraController _cameraController;
   late Future<void> _initializeControllerFuture;
+  bool _isCameraInitialized = false;
 
   @override
   void initState() {
@@ -30,10 +31,11 @@ class _ScanPageState extends State<ScanPage> {
       _cameraController =
           CameraController(cameras.first, ResolutionPreset.high);
       _initializeControllerFuture = _cameraController.initialize();
+      await _initializeControllerFuture;
+      setState(() => _isCameraInitialized = true);
     } catch (e) {
       _showSnackBar('Error initializing camera: $e');
     }
-    setState(() {});
   }
 
   void _showSnackBar(String message) {
@@ -61,18 +63,21 @@ class _ScanPageState extends State<ScanPage> {
       ),
       body: Stack(
         children: [
-          FutureBuilder<void>(
-            future: _initializeControllerFuture,
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.done) {
-                return Positioned.fill(child: CameraPreview(_cameraController));
-              } else if (snapshot.hasError) {
-                return Center(child: Text('Error: ${snapshot.error}'));
-              } else {
-                return const Center(child: CircularProgressIndicator());
-              }
-            },
-          ),
+          _isCameraInitialized
+              ? LayoutBuilder(
+                  builder: (context, constraints) {
+                    final size = constraints.biggest;
+                    return FittedBox(
+                      fit: BoxFit.cover,
+                      child: SizedBox(
+                        width: size.width,
+                        height: size.height,
+                        child: CameraPreview(_cameraController),
+                      ),
+                    );
+                  },
+                )
+              : const Center(child: CircularProgressIndicator()),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -134,7 +139,7 @@ class _ScanPageState extends State<ScanPage> {
       height: 220,
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.5),
+        color: Colors.black.withOpacity(0.6),
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(30),
           topRight: Radius.circular(30),
