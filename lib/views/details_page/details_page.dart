@@ -76,7 +76,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   left: 0,
                   right: 0,
                   child: Container(
-                    height: 40,
+                    height: 22,
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius:
@@ -116,15 +116,23 @@ class _DetailsPageState extends State<DetailsPage> {
                   Text(
                     widget.plant.description,
                     style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.w500),
+                        fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 16),
+                  _buildInfoRow(
+                      Icons.light_mode_outlined, 'Light', "Partial sun"),
+                  _buildInfoRow(Icons.water_drop, 'Water', 'every 3-7 days'),
+                  _buildInfoRow(Icons.grass, 'Soil', widget.plant.water),
+                  _buildInfoRow(
+                      Icons.thermostat_rounded, 'Temperature', "15°C - 29°C"),
                   widget.isPlant
                       ? _buildInfoRow(
                           Icons.eco, 'How to grow', widget.plant.growth)
                       : _buildInfoRow(
                           Icons.pets, 'Pet food', widget.plant.growth),
-                  _buildInfoRow(Icons.water_drop, 'Water', widget.plant.water),
+                  _buildInfoRow(Icons.opacity, 'Humidity', "50 - 70%"),
+                  _buildInfoRow(
+                      Icons.warning_amber_rounded, 'Toxcity', "Non-toxic"),
                 ],
               ),
             ),
@@ -140,7 +148,7 @@ class _DetailsPageState extends State<DetailsPage> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: Colors.green, size: 28),
+          Icon(icon, color: const Color(0xff8fba52), size: 28),
           const SizedBox(width: 10),
           Expanded(
             child: Column(

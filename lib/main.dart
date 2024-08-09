@@ -15,6 +15,7 @@ class HappyCareApp extends StatelessWidget {
       title: 'HappyCare',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
+          scrolledUnderElevation: 0,
           backgroundColor: Colors.white,
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
