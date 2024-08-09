@@ -50,7 +50,14 @@ class LoginPage extends StatelessWidget {
               CustomButton(
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                      builder: (context) => const ConfirmedPage()),
+                    builder: (context) => const ConfirmedPage(
+                      textOne: 'The account has been',
+                      textTwo: 'successfully logged in',
+                      textThree: 'Welcome back !',
+                      navigateTo: LoginPage(),
+                      buttonText: 'Go started',
+                    ),
+                  ),
                 ),
                 label: 'Log In',
                 height: 50.0,

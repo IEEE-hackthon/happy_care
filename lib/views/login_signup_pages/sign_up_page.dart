@@ -69,7 +69,13 @@ class SignUpPage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const ConfirmedPage(),
+                      builder: (context) => const ConfirmedPage(
+                        textOne: 'The account has been',
+                        textTwo: 'created successfully',
+                        textThree: 'Glade to welcome you!',
+                        navigateTo: LoginPage(),
+                        buttonText: 'Log in',
+                      ),
                     ),
                   );
                 },

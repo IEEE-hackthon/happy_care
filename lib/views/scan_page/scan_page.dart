@@ -52,7 +52,7 @@ class _ScanPageState extends State<ScanPage> {
           children: [
             _buildIconButton(
                 Icons.cancel_outlined, () => Navigator.of(context).pop()),
-            const Text('Scan', style: TextStyle(color: Color(0xff405727))),
+            const Text('Scan', style: TextStyle(color: Color(0xff8fba52))),
             _buildIconButton(Icons.settings, () {})
           ],
         ),
@@ -105,7 +105,7 @@ class _ScanPageState extends State<ScanPage> {
         color: Colors.white,
       ),
       child: IconButton(
-        icon: Icon(icon, color: const Color(0xff405727)),
+        icon: Icon(icon, color: const Color(0xff8fba52)),
         onPressed: onPressed,
       ),
     );

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../widgets/loginAndRegistration/custom_buttom.dart';
 import '../../widgets/loginAndRegistration/custom_textField.dart';
-import 'confirm_new_password.dart';
+import 'confirmed_page.dart';
+import 'login_page.dart';
 
 class CreateNewPassword extends StatelessWidget {
   const CreateNewPassword({super.key});
@@ -44,7 +45,13 @@ class CreateNewPassword extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const ConfirmNewPassword(),
+                    builder: (context) => const ConfirmedPage(
+                      textOne: 'The password changed',
+                      textTwo: 'successfully',
+                      textThree: 'You can now log in again !',
+                      navigateTo: LoginPage(),
+                      buttonText: 'Log in',
+                    ),
                   ),
                 );
               },
