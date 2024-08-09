@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:save_environment/views/choose_page.dart';
 
 import '../../widgets/loginAndRegistration/custom_buttom.dart';
 import '../../widgets/loginAndRegistration/custom_textField.dart';
@@ -54,7 +55,7 @@ class LoginPage extends StatelessWidget {
                       textOne: 'The account has been',
                       textTwo: 'successfully logged in',
                       textThree: 'Welcome back !',
-                      navigateTo: LoginPage(),
+                      navigateTo: ChoosePage(),
                       buttonText: 'Go started',
                     ),
                   ),
