@@ -9,14 +9,14 @@ class CustomCard extends StatelessWidget {
   final double cardWidth;
 
   const CustomCard({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.title,
     required this.subtitle,
     required this.onMorePressed,
     required this.onFavoritePressed,
     this.cardWidth = double.infinity,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

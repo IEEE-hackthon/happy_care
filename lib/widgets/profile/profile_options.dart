@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:save_environment/views/choose_page.dart';
+import 'package:save_environment/views/fav_page/fav_page.dart';
+import 'package:save_environment/views/my_plant_and_pets/mt_pets_page.dart';
+import 'package:save_environment/views/my_plant_and_pets/my_plant_page.dart';
 import 'package:save_environment/views/profile/edit_profile_page.dart';
 import 'package:save_environment/widgets/profile/expansion_tile.dart';
 import 'package:save_environment/widgets/profile/profile_option.dart';
@@ -38,17 +41,38 @@ class ProfileOptions extends StatelessWidget {
             );
           },
         ),
-        const ProfileOption(
+        ProfileOption(
           title: 'My Plants',
           icon: Icons.local_florist,
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const MyPlant(),
+              ),
+            );
+          },
         ),
-        const ProfileOption(
+        ProfileOption(
           title: 'My Animals',
           icon: Icons.pets,
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const MyPets(),
+              ),
+            );
+          },
         ),
-        const ProfileOption(
+        ProfileOption(
           title: 'Favorites',
           icon: Icons.favorite_border,
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const FavPage(),
+              ),
+            );
+          },
         ),
         const ProfileOption(
           title: 'Help & Support',

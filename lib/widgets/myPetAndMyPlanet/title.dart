@@ -1,21 +1,33 @@
 import 'package:flutter/material.dart';
+
 class TitleName extends StatelessWidget {
-  const TitleName({super.key, required this.iconName, required this.title});
-final IconData iconName;
-final String title;
+  const TitleName({super.key, required this.imagePath, required this.title});
+  final String imagePath;
+  final String? title;
   @override
   Widget build(BuildContext context) {
-    return   Padding(
-      padding: EdgeInsets.all(16),
-      child: Row(
-        children: [
-          Icon(iconName , color: Colors.green,),
-          SizedBox(width: 8,),
-          Text(title , style: TextStyle(fontSize: 18 , fontWeight: FontWeight.bold),),
-          Spacer(),
-          Icon(Icons.more_horiz)
-        ],
-      ),
+    return Row(
+      children: [
+        IconButton(
+          iconSize: 24,
+          icon: ImageIcon(
+            AssetImage(imagePath),
+            size: 24,
+            color: Colors.green,
+          ),
+          onPressed: () {},
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        if (title != null)
+          Text(
+            title!,
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        const Spacer(),
+        const Icon(Icons.more_horiz)
+      ],
     );
   }
 }
